@@ -37,7 +37,7 @@ CREATE TABLE `users` (
   `age` int(11) NOT NULL,
   `address` text NOT NULL,
   `test` varchar(100) NOT NULL,
-  `Image` varchar(1000) NOT NULL
+  `Image` mediumblob NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
