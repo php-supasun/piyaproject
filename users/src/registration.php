@@ -5,17 +5,19 @@
     <body>
         <form method="post" action="register-action.php" class="container">
             <div class="col-md-5" style="margin: 200px auto 0 auto;">
+                <div class="alert alert-danger" id="alert-error" role="alert"></div>
+
                 <h5>Registration</h5>
                 <div class="form-group">
                     <label>Username:</label><br>
-                    <input type="text" name="username" class="form-control" autocomplete="off"/>
+                    <input type="text" name="username" class="form-control" autocomplete="off" autofocus/>
                     <small id="emailHelp" class="form-text text-muted">Username must contain at least 5 characters.</small>
                 </div>
 
                 <div class="form-group">
                     <label>Password:</label><br>
                     <input type="password" name="password" class="form-control"/>
-                    <small id="emailHelp" class="form-text text-muted">Password must contain at least 6 characters.</small>
+                    <small id="emailHelp" class="form-text text-muted">Password must contain at least 8 characters.</small>
                 </div>
 
                 <div class="form-group">
@@ -32,6 +34,40 @@
                 Already a member? Click <a href="index.php">here</a> to login.
             </div>
         </form>
-    <script src="js/script.js"></script>
+
+        <script>
+            const alertMessage = document.querySelector('#alert-error');
+
+            function alertError() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const error = urlParams.get('error');
+                if (error === 'empty') {
+                    alertMessage.innerHTML = 'Please input information';
+                    alertMessage.style.display = 'block';
+                }
+                else if (error === 'exist') {
+                    alertMessage.innerHTML = 'This User Name Already Exists';
+                    alertMessage.style.display = 'block';
+                }
+                else if (error === 'password') {
+                    alertMessage.innerHTML = 'Password must contain at least 8 characters';
+                    alertMessage.style.display = 'block';
+                }
+                else if (error === 'username') {
+                    alertMessage.innerHTML = 'Username must contain at least 5 characters';
+                    alertMessage.style.display = 'block';
+                }
+                else if (error === 'match') {
+                    alertMessage.innerHTML = 'Password not matched!';
+                    alertMessage.style.display = 'block';
+                }
+                else {
+                    alertMessage.style.display = 'none';
+                }
+                console.log(error);
+            }
+            alertError();
+        </script>
+        <script src="js/script.js"></script>
     </body>
 </html>
