@@ -1,5 +1,2 @@
-
-
 <?php
-$mysqli = new mysqli('localhost', 'root', '', 'users');
-?>
+    $mysqli = new mysqli('localhost', 'root', '', 'users');

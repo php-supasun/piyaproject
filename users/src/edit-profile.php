@@ -45,6 +45,7 @@
             <div class="col-md-10" style="margin: 50px auto 0 auto;">
                 <h3>Update Profile Information</h3>
                 <input type="hidden" name="username" value="<?php echo $user_data['username']; ?>">
+                <input type="hidden" name="id" value="<?php echo $user_data['user_id']; ?>">
 
                 <div class="form-group">
                     <label>Name:</label><br>

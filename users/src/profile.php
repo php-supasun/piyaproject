@@ -1,4 +1,4 @@
-<?php    
+<?php
     include 'connection.php';
     session_start();
 
@@ -11,7 +11,9 @@
         $get_user = $mysqli->query("SELECT * FROM users WHERE username = '$user'");
         if ($get_user->num_rows == 1) {
             $profile_data = $get_user->fetch_assoc();
-        }    
+        }
+        $user_sql = "SELECT * FROM images WHERE user_id = " . $profile_data["user_id"];
+        $get_image = $mysqli->query($user_sql);
     }
 ?>
 <!DOCTYPE html>
@@ -77,15 +79,18 @@
                     <td>test:</td>
                     <td><?php echo $profile_data['test'] ?></td>
                 </tr>
-                <tr>
-                    <td>image:</td>
-                    <td>
-                        <?php if(!empty($profile_data['Image'])): ?>
-                            <img src="data:image/jpeg;base64,<?php echo base64_encode( $profile_data['Image'] ) ?>" width="50%"/>
-                        <?php endif; ?>
-                    </td>       
-                </tr>
             </table>
+
+            <div class="row text-center text-lg-left">
+                <?php while ($row = $get_image->fetch_assoc()): ?>
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <a href="#" class="d-block mb-4 h-100">
+                            <img src="data:image/jpeg;base64,<?php echo base64_encode( $row['image'] ) ?>" class="img-fluid img-thumbnail"/>
+                        </a>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+                
         </div>
 
         <script src="js/script.js"></script>
