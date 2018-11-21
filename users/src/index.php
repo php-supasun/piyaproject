@@ -15,7 +15,7 @@ session_start();?>
     <input type="text" name="username" /><br>            
     <label>Password:</label><br>            
     <input type="password" name="password" /><br>            
-    <input type="submit" value="Login" />       
+    <input type="submit" value="Login" name="login"/>       
         </form>Not a member yet? Click <a href="registration.php">here</a> to register.
     <?php } else if (isset($_SESSION['username'])) { ?>        
     <a href="profile.php?user=<?php echo $_SESSION['username'] ?>"

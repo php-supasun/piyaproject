@@ -1,14 +1,26 @@
 <?php
-include 'connection.php';
-if (isset($_POST['username'])) {
-$username = $_POST['username'];
-$password = $_POST['password'];
-$name = $_POST['name'];
-$register = $mysqli->query("INSERT INTO users (username, password, full_name) VALUES ('$username', '". md5($password)."', '$name')");
-if ($register) {
-header("Location: registration.php?register_action=success");
-} else {
-echo $mysqli->error;
-}
-}
-?>
+    include 'connection.php';
+    if (isset($_POST['username'])) {
+        $username = htmlspecialchars($_POST['username']);
+        $password = htmlspecialchars($_POST['password']);
+        $name = htmlspecialchars($_POST['name']);
+
+        if (empty($name) || empty($username) || empty($password)) {
+            echo "<script>alert('Please insert data');location='registration.php'</script>";
+            exit();
+        } else {
+            $sql = "SELECT * FROM users WHERE username='$username'";
+            $statement = $mysqli->query($sql);
+            $row_count = $statement->num_rows;
+            if ($row_count > 0) {
+                echo "<script>alert('User already exist');location='registration.php'</script>";
+                exit();
+            } else {
+                $hash_password = password_hash($password, PASSWORD_DEFAULT);
+                $sql = "INSERT INTO users (username, password, full_name) VALUES ('$username', '$hash_password', '$name')";
+                $statement = $mysqli->query($sql);
+                header("location: index.php");
+                exit();
+            }
+        }
+    }
