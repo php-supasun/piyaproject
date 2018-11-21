@@ -9,6 +9,7 @@ h1 {
     border-collapse: collapse;
     width: 80%;
     margin: 0 auto 50px auto;
+    animation: 0.4s ease-out 0s 1 scaleTable;
 }
 
 #profile td, #profile th {
@@ -44,4 +45,30 @@ input.invalid + p {
     opacity: 1;
     height: auto;
     margin-bottom: 20px;
+}
+
+#image-container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    animation: 0.4s ease-out 0s 1 scaleTable;
+}
+nav {
+    /* animation: 0.7s ease-out 0s 1 slideInFromLeft; */
+}
+@keyframes scaleTable {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
 }
