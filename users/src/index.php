@@ -11,7 +11,7 @@
                     <h5>Login</h5>
                     <div class="form-group">
                         <label>Username:</label><br>
-                        <input type="text" name="username" class="form-control"/>
+                        <input type="text" name="username" class="form-control" autofocus/>
                     </div>
                     <div class="form-group">
                         <label>Password:</label><br>

@@ -25,3 +25,12 @@ inputs.forEach((input) => {
         validate(e.target, patterns[e.target.attributes.name.value])
     });
 });
+
+function logout() {
+    var r = confirm("Are You Sure You Want to Log Out?");
+    if (r == true) {
+        location = 'logout.php';
+    } else {
+        location = location;
+    }
+}
