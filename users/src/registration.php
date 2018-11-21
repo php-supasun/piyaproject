@@ -8,7 +8,7 @@
                 <h5>Registration</h5>
                 <div class="form-group">
                 <label>Username:</label><br>
-                <input type="text" name="username" class="form-control"/>
+                <input type="text" name="username" class="form-control" autocomplete="off"/>
                 </div>
 
                 <div class="form-group">
@@ -23,13 +23,13 @@
 
                 <div class="form-group">
                 <label>Full Name:</label><br>
-                <input type="text" name="name" class="form-control"/>
+                <input type="text" name="name" class="form-control" autocomplete="off"/>
                 </div>
 
                 <input type="submit" value="Register" class="btn btn-primary"/>
                 Already a member? Click <a href="index.php">here</a> to login.
             </div>
         </form>
-
+    <script src="js/script.js"></script>
     </body>
 </html>

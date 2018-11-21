@@ -21,3 +21,21 @@
     background-color: rgb(109, 109, 109);
     color: white;
 }
+input {
+    transition: 0.2s;
+}
+input.valid {
+    border-color: rgb(8, 196, 55);
+}
+input.invalid {
+    border-color: rgba(196, 9, 9, 0.952);
+}
+input + p {
+    opacity: 0;
+    height: 0;
+}
+input.invalid + p {
+    opacity: 1;
+    height: auto;
+    margin-bottom: 20px;
+}
