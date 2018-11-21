@@ -12,8 +12,8 @@ if (isset($_POST['update_profile'])) {
     $gender = $_POST['gender'];        
     $address = $_POST['address'];
     $test = $_POST['test'];
-    $Image = $_FILES['image']['name'];                
-    $update_profile = $mysqli->query("UPDATE users SET full_name = '$fullname', gender = '$gender', age = $age, address = '$address', test = '$test', Image="."'$Image' WHERE username = '$user'");        
+    $Image = addslashes(file_get_contents($_FILES['image']['tmp_name']));            
+    $update_profile = $mysqli->query("UPDATE users SET full_name = '$fullname', gender = '$gender', age = $age, address = '$address', test = '$test', Image='$Image' WHERE username = '$user'");        
     if ($update_profile) {            
         header("Location: profile.php?user=$user");        
     } else {            

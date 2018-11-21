@@ -44,7 +44,7 @@ if ($user == $visitor ) { ?>
 <td><?php echo $profile_data['test'] ?></td>       
 </tr>        </table>    
 <td>image:</td>          
-<td><?php echo $profile_data['Image'] ?></td>       
+<td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $profile_data['Image'] ).'"/>' ?></td>       
 </tr>        </table>    
 
 </body></html>
