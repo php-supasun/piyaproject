@@ -2,13 +2,9 @@
     include 'connection.php';
     session_start();
 
-    if(!isset($_SESSION['id'])) {
-        header("location: index.php");
-        exit();
-    }
-    if (isset($_GET['user'])) {
-        $user = $_GET['user'];
-        $get_user = $mysqli->query("SELECT * FROM users WHERE username = '$user'");  
+    if (isset($_POST['profile'])) {
+        $user = $_POST['user'];
+        $get_user = $mysqli->query("SELECT * FROM users WHERE username = '$user'");
         if ($get_user->num_rows == 1) {
             $profile_data = $get_user->fetch_assoc();
         }    

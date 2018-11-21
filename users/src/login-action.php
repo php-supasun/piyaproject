@@ -24,6 +24,7 @@
                     } else {
                         $_SESSION['id'] = $row["user_id"];
                         $_SESSION['username'] = $row["username"];
+                        setcookie('username', $row["username"], time() + (86400 * 30), "/");
                         header("location: index.php");
                         exit();
                     }
