@@ -24,14 +24,9 @@
                 </div>
             </form>
             
-            <?php elseif (isset($_SESSION['username'])) : ?>
-                <!-- <form action="profile.php" method="POST">
-                    <input type="hidden" name="user" value="<?php echo $_SESSION['username'] ?>">
-                    <input type="submit" name="profile" value="View Profile">
-                </form> -->
-                <a href="profile.php?user=<?php echo $_SESSION['username'] ?>"><?php echo $_SESSION['username']; ?></a>
-                |
-                <a href="logout.php">Logout</a>
-        <?php endif; ?>
+            <?php elseif (isset($_SESSION['username'])) :
+                header("location: profile.php?user=" . $_SESSION['username']); 
+                endif;
+            ?>
     </body>
 </html>

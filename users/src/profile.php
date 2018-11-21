@@ -19,18 +19,19 @@
     <head>       
         <meta charset="UTF-8">   
         <title><?php echo $profile_data['username'] ?>’s Profile</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
     </head> 
     <body>
         <a href="index.php">Home</a>
         | <?php echo $profile_data['username'] ?>
         ’s Profile
-        <h3>Personal Information |
+        <h4>Personal Information |
             <form action="edit-profile.php" method="POST">
                 <input type="hidden" name="user" value="<?php echo $profile_data['username'] ?>">
                 <input type="submit" name="edit" value="Edit Profile">
             </form>
-        </h3>
+        </h4>
         <table id="profile">
             <tr>
                 <th>Data</th>

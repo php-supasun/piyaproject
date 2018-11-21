@@ -17,15 +17,14 @@
             } else {
                 if ($row = $statement->fetch_assoc()) {
                     $hashedPwdCheck = password_verify($password, $row["password"]);
-                    // $hashedPwd = md5($password);
                     if ($hashedPwdCheck == false) {
                         echo "<script>alert('Password is incorrect!');location='index.php'</script>";
                         exit();
                     } else {
-                        $_SESSION['id'] = $row["user_id"];
+                        // $_SESSION['id'] = $row["user_id"];
                         $_SESSION['username'] = $row["username"];
-                        setcookie('username', $row["username"], time() + (86400 * 30), "/");
-                        header("location: index.php");
+                        // setcookie('username', $row["username"], time() + (86400 * 30), "/");
+                        header("location: profile.php?user=".$_SESSION['username']);
                         exit();
                     }
                 }
