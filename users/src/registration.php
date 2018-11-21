@@ -1,43 +1,35 @@
 <?php
-include 'connection.php';
-session_start();
+    include 'connection.php';
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Registration</title>
-</head>
-<body>
-<?php
-if (!isset($_SESSION['username'])) { ?>
-<h5>Registration</h5>
-<?php
-if (isset($_GET['register_action'])) {
-if ($_GET['register_action'] == "success") { ?>
-Successfully Registered!
-<?php }
-}
-?>
-    <form method="post" action="register-action.php">
-        <label>Username:</label><br>
-        <input type="text" name="username" /><br>
+    <?php include 'layouts/header.php'; ?>
+    <body>
+        <form method="post" action="register-action.php" class="container">
+            <div class="col-md-5" style="margin: 200px auto 0 auto;">
+                <h5>Registration</h5>
+                <div class="form-group">
+                <label>Username:</label><br>
+                <input type="text" name="username" class="form-control"/>
+                </div>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" /><br>
+                <div class="form-group">
+                <label>Password:</label><br>
+                <input type="password" name="password" class="form-control"/>
+                </div>
 
-        <label>Confirm Password:</label><br>
-        <input type="password" name="confirmPassword" /><br>
+                <div class="form-group">
+                <label>Confirm Password:</label><br>
+                <input type="password" name="confirmPassword" class="form-control"/>
+                </div>
 
-        <label>Full Name:</label><br>
-        <input type="text" name="name" /><br>
+                <div class="form-group">
+                <label>Full Name:</label><br>
+                <input type="text" name="name" class="form-control"/>
+                </div>
 
-        <input type="submit" value="Register" />
-    </form>
-        Already a member? Click <a href="index.php">here</a> to login.
-    <?php } else { ?>
-        You already logged in. Click <a href="logout.php">here</a> to logout.
-    <?php }
-?>
-</body>
+                <input type="submit" value="Register" class="btn btn-primary"/>
+                Already a member? Click <a href="index.php">here</a> to login.
+            </div>
+        </form>
+
+    </body>
 </html>
