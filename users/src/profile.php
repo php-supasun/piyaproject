@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css?v2">
     </head> 
-    <body>
+    <body style="background: linear-gradient(to top, #ecedee 0%, #eceeef 75%, #e7e8e9 100%);">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Folder Locked</a>
@@ -81,11 +81,11 @@
                 </tr>
             </table>
 
-            <div class="row text-center text-lg-left">
+            <div class="row text-center text-lg-left" style="background-color: #fff; padding: 10px; border-radius: 20px;">
                 <?php while ($row = $get_image->fetch_assoc()): ?>
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img src="data:image/jpeg;base64,<?php echo base64_encode( $row['image'] ) ?>" class="img-fluid img-thumbnail"/>
+                    <div class="col-lg-3 col-md-4 col-xs-6 mb-2">
+                        <a href="#" class="d-block mb-4 h-100" style="border: 1px solid #d2cccc; text-align: center; border-radius: 5px;">
+                            <img src="data:image/jpeg;base64,<?php echo base64_encode( $row['image'] ) ?>" class="img-fluid img-thumbnail" style="height: 200px; object-fit: cover;"/>
                         </a>
                     </div>
                 <?php endwhile; ?>

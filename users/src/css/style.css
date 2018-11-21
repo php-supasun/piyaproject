@@ -1,3 +1,9 @@
+h1 {
+    font-weight: bold !important;
+    font-family: 'Atma', cursive !important;
+    color: rgb(49, 49, 49);
+    font-size: 3em !important;
+}
 #profile {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;

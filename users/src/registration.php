@@ -2,9 +2,11 @@
     include 'connection.php';
 ?>
     <?php include 'layouts/header.php'; ?>
-    <body>
+    <body style="background: #e0e0e0;">
         <form method="post" action="register-action.php" class="container">
-            <div class="col-md-5" style="margin: 200px auto 0 auto;">
+            <div class="col-md-5" style="margin: 150px auto 0 auto;">
+                <h1>Folder Locked</h1>
+                <br><br>
                 <div class="alert alert-danger" id="alert-error" role="alert"></div>
 
                 <h5>Registration</h5>
@@ -30,7 +32,8 @@
                     <input type="text" name="name" class="form-control" autocomplete="off"/>
                 </div>
 
-                <input type="submit" value="Register" class="btn btn-primary"/>
+                <input type="submit" value="Register" class="btn btn-warning form-control" style="font-weight: bold;"/>
+                <br><br>
                 Already a member? Click <a href="index.php">here</a> to login.
             </div>
         </form>
@@ -68,6 +71,6 @@
             }
             alertError();
         </script>
-        <script src="js/script.js"></script>
+        <script src="js/script.js?v1"></script>
     </body>
 </html>
