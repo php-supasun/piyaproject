@@ -8,6 +8,8 @@
             if (!isset($_SESSION['username'])) : ?>
             <form method="post" action="login-action.php" class="container">
                 <div class="col-md-5" style="margin: 200px auto 0 auto;">
+                    <div class="alert alert-danger" id="alert-error" role="alert"></div>
+
                     <h5>Login</h5>
                     <div class="form-group">
                         <label>Username:</label><br>
@@ -28,5 +30,31 @@
                 header("location: profile.php?user=" . $_SESSION['username']); 
                 endif;
             ?>
+
+        <script>
+            const alertMessage = document.querySelector('#alert-error');
+
+            function alertError() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const error = urlParams.get('error');
+                if (error === 'empty') {
+                    alertMessage.innerHTML = 'Please input username and password';
+                    alertMessage.style.display = 'block';
+                }
+                else if (error === 'username') {
+                    alertMessage.innerHTML = 'Username incorrect!';
+                    alertMessage.style.display = 'block';
+                }
+                else if (error === 'password') {
+                    alertMessage.innerHTML = 'Password incorrect!';
+                    alertMessage.style.display = 'block';
+                }
+                else {
+                    alertMessage.style.display = 'none';
+                }
+                console.log(error);
+            }
+            alertError();
+        </script>
     </body>
 </html>
