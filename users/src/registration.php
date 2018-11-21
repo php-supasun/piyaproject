@@ -19,19 +19,25 @@ Successfully Registered!
 <?php }
 }
 ?>
-<form method="post" action="register-action.php">
-<label>Username:</label><br>
-<input type="text" name="username" /><br>
-<label>Password:</label><br>
-<input type="password" name="password" /><br>
-<label>Full Name:</label><br>
-<input type="text" name="name" /><br>
-<input type="submit" value="Register" />
-</form>
-Already a member? Click <a href="index.php">here</a> to login.
-<?php } else { ?>
-You already logged in. Click <a href="logout.php">here</a> to logout.
-<?php }
+    <form method="post" action="register-action.php">
+        <label>Username:</label><br>
+        <input type="text" name="username" /><br>
+
+        <label>Password:</label><br>
+        <input type="password" name="password" /><br>
+
+        <label>Confirm Password:</label><br>
+        <input type="password" name="confirmPassword" /><br>
+
+        <label>Full Name:</label><br>
+        <input type="text" name="name" /><br>
+
+        <input type="submit" value="Register" />
+    </form>
+        Already a member? Click <a href="index.php">here</a> to login.
+    <?php } else { ?>
+        You already logged in. Click <a href="logout.php">here</a> to logout.
+    <?php }
 ?>
 </body>
 </html>
