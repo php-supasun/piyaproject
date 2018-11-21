@@ -30,35 +30,39 @@
                 if ($user == $visitor ) { ?>    
                 <a href="edit-profile.php?user=<?php echo $profile_data['username'] ?>">Edit Profile</a> 
             <?php } ?> 
-        </h3>     
+        </h3>
         <table id="profile">
             <tr>
                 <th>Data</th>
                 <th>Value</th>
             </tr>
-            <tr>     
-                <td>Name:</td> 
+            <tr>
+                <td>Name:</td>
                 <td><?php echo $profile_data['full_name'] ?></td>
             </tr>
             <tr>
-                <td>Age:</td>     
+                <td>Age:</td>
                 <td><?php echo $profile_data['age'] ?></td>
             </tr>
-            <tr>     
-                <td>Gender:</td>            
+            <tr>
+                <td>Gender:</td>
                 <td><?php echo $profile_data['gender'] ?></td>
             </tr>
             <tr>
-                <td>Address:</td>          
+                <td>Address:</td>
                 <td><?php echo $profile_data['address'] ?></td>
             </tr>
             <tr>
-                <td>test:</td>          
+                <td>test:</td>
                 <td><?php echo $profile_data['test'] ?></td>
             </tr>
             <tr>
-                <td>image:</td>          
-                <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $profile_data['Image'] ).'" width="50%"/>' ?></td>       
+                <td>image:</td>
+                <td>
+                    <?php if(!empty($profile_data['Image'])): ?>
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode( $profile_data['Image'] ) ?>" width="50%"/>
+                    <?php endif; ?>
+                </td>       
             </tr>
         </table>
     </body>
