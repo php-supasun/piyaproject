@@ -30,12 +30,4 @@
                 }
             }
         }
-        // $login = $mysqli->query("SELECT * FROM users WHERE username = '$username' AND password = '".md5($password)."'");
-        // if ($login->num_rows <= 1) {
-        //     $_SESSION['username'] = $username;
-        //     header("Location: index.php");
-        // } else {
-        //     echo $mysqli->error;
-        // }
     }
-?>

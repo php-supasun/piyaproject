@@ -1,0 +1,23 @@
+#profile {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#profile td, #profile th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#profile tr:nth-child(even){background-color: #f2f2f2;}
+
+#profile tr:hover {background-color: #ddd;}
+
+#profile th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(109, 109, 109);
+    color: white;
+}
