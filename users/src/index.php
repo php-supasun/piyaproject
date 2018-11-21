@@ -19,10 +19,11 @@
                 <input type="submit" value="Login" name="login"/>       
             </form>Not a member yet? Click <a href="registration.php">here</a> to register.
             <?php elseif (isset($_SESSION['username'])) : ?>
-                <form action="profile.php" method="POST">
+                <!-- <form action="profile.php" method="POST">
                     <input type="hidden" name="user" value="<?php echo $_SESSION['username'] ?>">
                     <input type="submit" name="profile" value="View Profile">
-                </form>
+                </form> -->
+                <a href="profile.php?user=<?php echo $_SESSION['username'] ?>"><?php echo $_SESSION['username']; ?></a>
                 |
                 <a href="logout.php">Logout</a>            
         <?php endif; ?>

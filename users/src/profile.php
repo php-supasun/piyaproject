@@ -2,8 +2,12 @@
     include 'connection.php';
     session_start();
 
-    if (isset($_POST['profile'])) {
-        $user = $_POST['user'];
+    if (empty($_SESSION['username']) || $_SESSION['username'] !== $_GET['user']) {
+        header("location: index.php");
+        exit();
+    }
+    if (isset($_GET['user'])) {
+        $user = $_GET['user'];
         $get_user = $mysqli->query("SELECT * FROM users WHERE username = '$user'");
         if ($get_user->num_rows == 1) {
             $profile_data = $get_user->fetch_assoc();
@@ -22,10 +26,10 @@
         | <?php echo $profile_data['username'] ?>
         ’s Profile
         <h3>Personal Information |
-            <?php $visitor = $_SESSION['username']; 
-                if ($user == $visitor ) { ?>    
-                <a href="edit-profile.php?user=<?php echo $profile_data['username'] ?>">Edit Profile</a> 
-            <?php } ?> 
+            <form action="edit-profile.php" method="POST">
+                <input type="hidden" name="user" value="<?php echo $profile_data['username'] ?>">
+                <input type="submit" name="edit" value="Edit Profile">
+            </form>
         </h3>
         <table id="profile">
             <tr>
