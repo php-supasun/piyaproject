@@ -31,6 +31,6 @@ function logout() {
     if (r == true) {
         location = 'logout.php';
     } else {
-        location = location;
+        return;
     }
 }
