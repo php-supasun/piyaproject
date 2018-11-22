@@ -7,7 +7,7 @@
         <?php
             if (!isset($_SESSION['username'])) : ?>
             <form method="post" action="login-action.php" class="container">
-                <div class="col-md-5" style="margin: 150px auto 0 auto;">
+                <div class="col-md-5" style="margin: 100px auto 0 auto;">
                     <h1>Folder Locked</h1>
                     <br><br>
                     <div class="alert alert-danger" id="alert-error" role="alert"></div>

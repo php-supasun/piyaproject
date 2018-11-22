@@ -4,9 +4,9 @@
     <?php include 'layouts/header.php'; ?>
     <body style="background: #e0e0e0;">
         <form method="post" action="register-action.php" class="container">
-            <div class="col-md-5" style="margin: 150px auto 0 auto;">
+            <div class="col-md-5" style="margin: 100px auto 50px auto;">
                 <h1>Folder Locked</h1>
-                <br><br>
+                <br>
                 <div class="alert alert-danger" id="alert-error" role="alert"></div>
 
                 <h5>Registration</h5>

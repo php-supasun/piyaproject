@@ -22,7 +22,7 @@
         <meta charset="UTF-8">   
         <title><?php echo $profile_data['username'] ?>’s Profile</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/style.css?v3">
+        <link rel="stylesheet" href="css/style.css?v4">
     </head> 
     <body style="background: linear-gradient(to top, #ecedee 0%, #eceeef 75%, #e7e8e9 100%);">
 
@@ -84,9 +84,12 @@
             <div class="row text-center text-lg-left" id="image-container">
                 <?php while ($row = $get_image->fetch_assoc()): ?>
                     <div class="col-lg-3 col-md-4 col-xs-6 mb-2">
-                        <a href="#" class="d-block mb-4 h-100" style="border: 1px solid #d2cccc; text-align: center; border-radius: 5px;">
-                            <img src="data:image/jpeg;base64,<?php echo base64_encode( $row['image'] ) ?>" class="img-fluid img-thumbnail" style="height: 200px; object-fit: cover;"/>
-                        </a>
+                        <div class="hovereffect">
+                            <img src="data:image/jpeg;base64,<?php echo base64_encode( $row['image'] ) ?>" class="img-fluid img-thumbnail img-responsive" style="height: 200px;"/>
+                            <div class="overlay">
+                                <a class="info" href="#">Share</a>
+                            </div>
+                        </div>
                     </div>
                 <?php endwhile; ?>
             </div>
