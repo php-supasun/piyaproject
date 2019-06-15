@@ -3,7 +3,7 @@
     session_start();
 ?>
     <?php include 'layouts/header.php'; ?>
-    <body style="background: #e0e0e0;">
+    <body style="background: url('http://getwallpapers.com/wallpaper/full/6/e/b/90114.jpg');background-size: cover;">
         <?php
             if (!isset($_SESSION['username'])) : ?>
             <form method="post" action="login-action.php" class="container">
