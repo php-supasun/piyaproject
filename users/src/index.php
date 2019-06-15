@@ -22,8 +22,10 @@
                     </div>
                     <input type="submit" value="Login" name="login" class="btn btn-warning form-control" style="font-weight: bold;"/>
                     <br><br>
-                    Not a member yet? Click
-                    <a href="registration.php">here</a> to register.
+                    <p>
+                        Not a member yet? Click
+                        <a href="registration.php">here</a> to register.
+                    </p>
                 </div>
             </form>
             
